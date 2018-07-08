@@ -4,10 +4,12 @@
 
 ## Building and running bpm-detector
 
-### Sequential
+###  
 
 To compile the project into a binary, call the following command in the working directory of the project:
+
     $ cmake binary
+    
     $ make binary
 
 This will create a binary file called `bpm-detector` in the `bin/` directory. This program expects the relative path of a stereo audio file in the `wav` format as a command line argument; therefore, the audio file you want to test should be copied to the project directory. For instance, if you wanted to calculate the bpm for a file called `test.wav`, you would call the following:
