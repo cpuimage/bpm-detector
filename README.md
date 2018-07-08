@@ -7,55 +7,12 @@
 ### Sequential
 
 To compile the project into a binary, call the following command in the working directory of the project:
-
+    $ cmake binary
     $ make binary
 
 This will create a binary file called `bpm-detector` in the `bin/` directory. This program expects the relative path of a stereo audio file in the `wav` format as a command line argument; therefore, the audio file you want to test should be copied to the project directory. For instance, if you wanted to calculate the bpm for a file called `test.wav`, you would call the following:
 
     $ ./bin/bpm-detector test.wav
-
-Or use the `run_ser.bash` script in the `bash/` directory to create a job on Northeastern's discovery cluster. First, you must edit the bash to include your username and relative path of the audio file to test as indicated in the bash file. Then run the following command:
-
-    $ bsub < bash/run_ser.bash
-
-### Parallel with OpenMP
-
-To compile the OpenMP version of the project, call the following command in the working directory of the project:
-
-    $ make omp
-
-This will create a two binaries called `bpm-detector-omp` and `bpm-detector-omp2` in the `bin/` directory. Similarly to the sequential version, these programs expects the relative path of a stereo audio file.
-
-To run the OpenMP version on Northeastern's discovery cluster, use the `run_omp.bash` script in the `bash/` directory. First, you must edit the bash to include your username and relative path of the audio file to test as indicated in the bash file. Then run the following command:
-
-    $ bsub < bash/run_omp.bash
-
-### Parallel with MPI
-
-To compile the MPI version of the project, call the following command in the working directory of the project:
-
-    $ make mpi
-
-This will create a binary called `bpm-detector-mpi` in the `bin/` directory. Similarly to the sequential version, this program expects the relative path of a stereo audio file.
-
-To run the MPI version on Northeastern's discovery cluster, use the `run_mpi.bash` script in the `bash/` directory. First, you must edit the bash to include your username and relative path of the audio file to test as indicated in the bash file. Then run the following command:
-
-    $ bsub < bash/run_mpi.bash
-
-### Parallel with Matlab
-
-There are two versions of the Matlab versions of `bpm-detector`, both residing in the `matlab/` directory. They can be used directly in Matlab by changing to the appropriate directory and calling the following command:
-
-    $ control('<RELATIVE_PATH_TO_AUDIO_FILE>', <#_OF_LOOPS_TO_PROCESS>)
-
-To run the Matlab version on Northeastern's discovery cluster, use the `run_matlab_ser.bash` or `run_matlab_pipeline.bash` script in the `bash/` directory. First, you must edit the bash script to include youre username and relative path of the audio file to test. Then run the following command:
-
-    $ bsub < bash/run_matlab_ser.bash
-
-or 
-
-    $ bsub < bash/run_matlab_pipeline.bash 
-
 
 ## How it works
 
